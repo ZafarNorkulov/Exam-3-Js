@@ -161,24 +161,9 @@ let shakeBtn = document.getElementById("shakes");
 
 allBtn.addEventListener("click", () => {
   sectionCenter.innerHTML = null;
-
-  let newArr = menu.map((value, index, array) => {
-    let html = `<article class="menu-item">
-    <img src=${value.img} alt=${value.title} class="photo" />
-    <div class="item-info">
-      <header>
-        <h4>${value.title}</h4>
-        <h4 class="price">$${value.price}</h4>
-      </header>
-      <p class="item-text">
-        ${value.desc}
-      </p>
-    </div>
-  </article>`;
-
-    sectionCenter.insertAdjacentHTML("beforeend", html);
-  });
-  render(newArr);
+  if (allBtn.value == "all") {
+    render(menu);
+  }
 });
 
 breakBtn.addEventListener("click", () => {
