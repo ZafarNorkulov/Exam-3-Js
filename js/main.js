@@ -102,15 +102,13 @@ render(menu);
 // INPUT
 elForm.addEventListener("keyup", (e) => {
   e.preventDefault();
-  if (e.keyCode == 13) {
-    sectionCenter.innerHTML = null;
-    let newArr = menu.filter((element) =>
-      element.category.toLowerCase() == elInput.value.toLowerCase()
-        ? element
-        : null
-    );
-    render(newArr);
-  }
+  sectionCenter.innerHTML = null;
+  let newArr = menu.filter((element) =>
+    element.category.toLowerCase() == elInput.value.toLowerCase()
+      ? element
+      : null
+  );
+  render(newArr);
 });
 elForm.addEventListener("keyup", (e) => {
   e.preventDefault();
