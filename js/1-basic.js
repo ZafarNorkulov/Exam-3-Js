@@ -103,7 +103,7 @@ render(menu);
 elForm.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.keyCode == 13) {
-    sectionCenter.innerHTML = "";
+    sectionCenter.innerHTML = null;
     let newArr = menu.filter((element) =>
       element.category.toLowerCase() == elInput.value.toLowerCase()
         ? element
@@ -132,24 +132,24 @@ select.addEventListener("change", () => {
   sectionCenter.innerHTML = null;
   if (select.value == "all") {
     render(menu);
-  }else if(select.value == 'breakfast'){
+  } else if (select.value == "breakfast") {
     sectionCenter.innerHTML = null;
-  let newArr = menu.filter((element) =>
-    element.category == select.value ? element : null
-  );
-  render(newArr);
-  }else if(select.value == 'lunch'){
+    let newArr = menu.filter((element) =>
+      element.category == select.value ? element : null
+    );
+    render(newArr);
+  } else if (select.value == "lunch") {
     sectionCenter.innerHTML = null;
-  let newArr = menu.filter((element) =>
-    element.category == select.value ? element : null
-  );
-  render(newArr);
-  }else if(select.value == 'shakes'){
+    let newArr = menu.filter((element) =>
+      element.category == select.value ? element : null
+    );
+    render(newArr);
+  } else if (select.value == "shakes") {
     sectionCenter.innerHTML = null;
-  let newArr = menu.filter((element) =>
-    element.category == select.value ? element : null
-  );
-  render(newArr);
+    let newArr = menu.filter((element) =>
+      element.category == select.value ? element : null
+    );
+    render(newArr);
   }
 });
 
@@ -161,6 +161,7 @@ let shakeBtn = document.getElementById("shakes");
 
 allBtn.addEventListener("click", () => {
   sectionCenter.innerHTML = null;
+
   let newArr = menu.map((value, index, array) => {
     let html = `<article class="menu-item">
     <img src=${value.img} alt=${value.title} class="photo" />
